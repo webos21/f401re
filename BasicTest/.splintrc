@@ -1,0 +1,200 @@
+
+#######################################
+# System Include
+#######################################
+-sys-dirs Drivers/CMSIS/Include;Drivers/CMSIS/Device/ST/STM32F1xx/Include;Drivers/STM32F1xx_HAL_Driver/Inc;Inc;C:/DevSoft/gcc-arm-none-eabi-5_4-2016q2/arm-none-eabi/include;C:/DevSoft/gcc-arm-none-eabi-5_4-2016q2/lib/gcc/arm-none-eabi/5.4.1/include
+#-systemdirerrors
+-IC:/DevSoft/gcc-arm-none-eabi-5_4-2016q2/arm-none-eabi/include
+-IC:/DevSoft/gcc-arm-none-eabi-5_4-2016q2/lib/gcc/arm-none-eabi/5.4.1/include
+
+
+#######################################
+# Definitions for "arm-none-eabi-"
+#######################################
+-D__GNUC__=5
+-D__GNUC_MINOR__=4
+-D__GNUC_PATCHLEVEL__=1
+-D__arm__=1
+-D__ARMEL__=1
+-D__ARM_ARCH=4
+-D__ARM_ARCH_4T__=1
+-D__ARM_ARCH_ISA_ARM=1
+-D__ARM_ARCH_ISA_THUMB=1
+-D__ARM_EABI__=1
+-D__ARM_SIZEOF_WCHAR_T=4
+-D__INTPTR_TYPE__=\"int\"
+-D__INT8_TYPE__=\"signed char\"
+-D__INT16_TYPE__=\"short int\"
+-D__INT32_TYPE__=\"long int\"
+-D__INT64_TYPE__=\"long long\"
+-D__builtin_va_list=\"va_list\"
+
+
+#######################################
+# Project Definitions
+#######################################
+-DSTM32F105xC
+-DHSE_VALUE=25000000U
+-DSVC_HOST=1
+
+
+#######################################
+# Project Include
+#######################################
+-IDrivers/CMSIS/Include
+-IDrivers/CMSIS/Device/ST/STM32F1xx/Include
+-IDrivers/STM32F1xx_HAL_Driver/Inc
+-IInc
+-Istx_inc
+
+
+#######################################
+# splint's MODE SETTING
+#######################################
+ -hints
+#-forcehints
+ -linelen 120
+ -parenfileformat
+ +quiet
+
+ -booltype  bool
+ -booltrue  true
+ -boolfalse false
+
+ -standard
+ +strictlib
+
+
+#######################################
+# splint's FLAGS : main check options
+#######################################
+ +checks
+ +partial
+ +matchanyintegral
+ +strictlib
+ -nullassign
+ -predboolint
+ -predboolptr
+ +ptrnegate
+ -switchloopbreak
+ +ignoresigns
+ -infloopsuncon
+ -type
+
+
+#######################################
+# splint's FLAGS : memory checks don't quite work without annotations
+#######################################
+ -mustfreeonly
+ -compmempass
+ -nullret
+ -observertrans
+ -statictrans
+ -compdestroy
+ -nullpass
+ -nullstate
+ -compdef
+ -usereleased
+ -temptrans
+ -dependenttrans
+ -kepttrans
+ -branchstate
+ -immediatetrans
+ -mustfreefresh
+
+
+#######################################
+# These tests give false positives, compiler typically has
+# better warnings for these.
+#######################################
+ -noret
+ -noeffect
+ -usedef
+
+
+
+#######################################
+# splint's FLAGS : MISRA-like Checking
+#######################################
+###################
+# the flags commented out below are switched on by default or the
+# '-standard' shortcut.
+###################
+ +ansi89limits
+#+boolops
+#+casebreak
+#-charint
+#+cppnames
+ +declundef
+ +elseif-complete
+#+evalorder
+#+exportheader
+#+exportheadervar
+#+exportlocal
+ -externalnamelen 31
+
+###################
+# +fcnmacros : influence to <inttypes.h>
+###################
+#+fcnmacros
+###################
+
+#+firstcase
+#-floatdouble
+ +forblock
+#+gnuextensions
+ +ifblock
+#-ignorequals
+#-ignoresigns
+#+imptype
+#+incompletetype
+#+incondefs
+#+initsize
+ -internalnamelen 31
+#+isoreserved
+ +isoreservedinternal
+#-longintegral
+#-longunsignedintegral
+#+macroassign
+#+macrofcndecl
+#+macroparams
+#+macroparens
+#+macrostmt
+ -maintype
+#-matchanyintegral
+#-modfilesystem
+#+namechecks
+#+nestcomment
+#+noeffect
+#+noparams
+#+noret
+ +oldstyle
+#+predassign
+#+predboolint
+#+protoparammatch
+#-protoparamname
+###################
+# +ptrarith : cannot add or sub pointer
+###################
+#+ptrarith
+###################
+#+realcompare
+#+redecl
+#+redef
+#-relaxquals
+#-relaxtypes
+ +retval
+#+shadow
+#+shiftimplementation
+#+shiftnegative
+ +slashslashcomment
+#+stackref
+#+sysunrecog
+#+type
+#+unreachable
+#+unrecog
+#+unrecogdirective
+#+usedef
+#+usevarargs
+ +whileblock
+

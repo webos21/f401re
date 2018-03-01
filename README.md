@@ -1,1 +1,1 @@
-# f401re
+# Project for NUCLEO-F401RE
