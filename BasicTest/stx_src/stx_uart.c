@@ -28,9 +28,9 @@
 #include <string.h>
 
 #ifdef S_SPLINT_S
-#include "stm32f1xx_hal_dma.h"
-#include "stm32f1xx_hal_uart.h"
-#include "stm32f1xx_hal_cortex.h"
+#include "stm32f4xx_hal_dma.h"
+#include "stm32f4xx_hal_uart.h"
+#include "stm32f4xx_hal_cortex.h"
 #endif
 
 /* ----------------------------------------------

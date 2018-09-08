@@ -26,7 +26,7 @@
 #include "stx_driver.h"
 
 #ifdef S_SPLINT_S
-#include "stm32f1xx_hal_flash.h"
+#include "stm32f4xx_hal_flash.h"
 #endif
 
 /* ----------------------------------------------

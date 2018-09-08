@@ -2,7 +2,7 @@
 #######################################
 # System Include
 #######################################
--sys-dirs Drivers/CMSIS/Include;Drivers/CMSIS/Device/ST/STM32F1xx/Include;Drivers/STM32F1xx_HAL_Driver/Inc;Inc;C:/DevSoft/gcc-arm-none-eabi-5_4-2016q2/arm-none-eabi/include;C:/DevSoft/gcc-arm-none-eabi-5_4-2016q2/lib/gcc/arm-none-eabi/5.4.1/include
+-sys-dirs Drivers/CMSIS/Include;Drivers/CMSIS/Device/ST/STM32F4xx/Include;Drivers/STM32F4xx_HAL_Driver/Inc;Inc;C:/DevSoft/gcc-arm-none-eabi-5_4-2016q2/arm-none-eabi/include;C:/DevSoft/gcc-arm-none-eabi-5_4-2016q2/lib/gcc/arm-none-eabi/5.4.1/include
 #-systemdirerrors
 -IC:/DevSoft/gcc-arm-none-eabi-5_4-2016q2/arm-none-eabi/include
 -IC:/DevSoft/gcc-arm-none-eabi-5_4-2016q2/lib/gcc/arm-none-eabi/5.4.1/include
@@ -42,8 +42,8 @@
 # Project Include
 #######################################
 -IDrivers/CMSIS/Include
--IDrivers/CMSIS/Device/ST/STM32F1xx/Include
--IDrivers/STM32F1xx_HAL_Driver/Inc
+-IDrivers/CMSIS/Device/ST/STM32F4xx/Include
+-IDrivers/STM32F4xx_HAL_Driver/Inc
 -IInc
 -Istx_inc
 

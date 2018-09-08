@@ -23,7 +23,8 @@
 #include "stx_driver.h"
 
 #ifdef S_SPLINT_S
-#include "stm32f1xx_hal_crc.h"
+#include "stm32f401xe.h"
+#include "stm32f4xx_hal_crc.h"
 #endif
 
 
